@@ -2,10 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router';
 
 const Tour = (props) => {
-    const { id, destination, rate, price, desImg, desc } = props.tour;
+    const { _id, destination, rate, price, desImg, desc } = props.tour;
     const history = useHistory();
     const handleBook = () => {
-        history.push(`tour/${id}`)
+        history.push(`tour/${_id}`)
     };
     return (
         <div className="col-sm-12 col-md-4 col-lg-4">
