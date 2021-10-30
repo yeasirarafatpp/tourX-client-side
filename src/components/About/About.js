@@ -10,11 +10,11 @@ const About = () => {
                 <div className="col-md-8">
                     <h4>About Us</h4>
                     <p>What we are and our history</p>
-                    <p>Our Clinic was at the forefront of modern medicine when its founders opened it as a multi-specialty group practice in 1921. In its first century, Our Clinic has introduced many medical firsts, opened facilities around the world and is proud to be ranked among the top hospitals in the country. </p>
+                    <p>Founded in 2021 in Bangladesh, Tourx.com has grown from a small Dutch startup to one of the world’s leading digital travel companies. Part of Booking Holdings Inc. (NASDAQ: BKNG), TourX.com’s mission is to make it easier for everyone to experience the world.</p>
                     <hr />
                     <h4>Our Vision</h4>
                     <p>What we are and our history</p>
-                    <p>To inspire hope, and contribute to health and well-being by providing the best care to every patient through integrated clinical practice, education and research. our Clinic will provide an unparalleled experience as the most trusted partner for health care</p>
+                    <p>TourX.com is available in 43 languages and offers more than 28 million total reported accommodation listings, including over 6.2 million listings alone of homes, apartments and other unique places to stay. No matter where you want to go or what you want to do, Booking.com makes it easy and backs it all up with 24/7 customer support.</p>
                 </div>
                 <div className="col-md-4 bg-primary">
                     <img className="img-fluid" src={aboutImg} alt="" />

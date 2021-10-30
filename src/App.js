@@ -7,6 +7,8 @@ import Signup from './components/Signup/Signup';
 import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
 import About from './components/About/About';
+import Footer from './components/Footer/Footer';
+import SingleTour from './components/SingleTour/SingleTour';
 
 function App() {
   return (
@@ -24,6 +26,9 @@ function App() {
             <Route exact path="/about">
               <About></About>
             </Route>
+            <Route exact path="/tour/:tourId">
+              <SingleTour></SingleTour>
+            </Route>
             <Route exact path="/login">
               <Login></Login>
             </Route>
@@ -34,6 +39,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>
