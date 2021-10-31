@@ -30,6 +30,8 @@ const Header = () => {
                             </div>
                                 :
                                 <Nav>
+                                    <Nav.Link as={Link} to="/addDestination">Add Destination</Nav.Link>
+                                    <Nav.Link as={Link} to="/myPlace">My Place</Nav.Link>
                                     <Nav.Link as={Link} to="/signup">SignUp</Nav.Link>
                                     <Nav.Link as={Link} to="/login">Login</Nav.Link>
                                 </Nav>

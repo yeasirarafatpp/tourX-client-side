@@ -9,6 +9,8 @@ import AuthProvider from './context/AuthProvider';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 import SingleTour from './components/SingleTour/SingleTour';
+import AddDestination from './components/AddDestination/AddDestination';
+import MyPlace from './components/MyPlace/MyPlace';
 
 function App() {
   return (
@@ -25,6 +27,12 @@ function App() {
             </Route>
             <Route exact path="/about">
               <About></About>
+            </Route>
+            <Route exact path="/myPlace">
+              <MyPlace></MyPlace>
+            </Route>
+            <Route exact path="/addDestination">
+              <AddDestination></AddDestination>
             </Route>
             <Route exact path="/tour/:tourId">
               <SingleTour></SingleTour>
