@@ -15,7 +15,7 @@ const AllBookings = () => {
                     <tr>
                         <th scope="col">Destination</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Name</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,7 +24,7 @@ const AllBookings = () => {
                             <tr key={item._id}>
                                 <td>{item.destination}</td>
                                 <td>{item.RegEmail}</td>
-                                <td>{item.price}</td>
+                                <td>{item.FullName}</td>
                             </tr>
                         ))
                     }

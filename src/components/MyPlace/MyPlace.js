@@ -9,6 +9,16 @@ const MyPlace = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
+    const handleDelete = id => {
+        const url = `https://boiling-cove-04802.herokuapp.com/orders/${id}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+    }
     return (
         <div className="container py-5">
             <h2>Here I can see my all destination</h2>
@@ -28,7 +38,7 @@ const MyPlace = () => {
                                 <td>{item.destination}</td>
                                 <td>{item.price}</td>
                                 <td>{item.rate}</td>
-                                <td><button className="btn btn-primary">Cancel</button></td>
+                                <td><button onClick={() => handleDelete(item._id)} className="btn btn-primary">Cancel</button></td>
                             </tr>
                         ))
                     }

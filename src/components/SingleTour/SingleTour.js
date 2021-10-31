@@ -64,8 +64,8 @@ const SingleTour = () => {
                             <input {...register("UserAddress")} type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
                         </div>
                         <div className="col-12">
-                            <label htmlFor="inputAddress" className="form-label">Destination</label>
-                            <input {...register("destination")} type="text" className="form-control" id="inputAddress" value={tour.destination} placeholder="1234 Main St" />
+                            <label htmlFor="inputDestination" className="form-label">Destination</label>
+                            <input {...register("destination")} type="text" className="form-control" id="inputDestination" value={tour.destination} placeholder="1234 Main St" />
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputCity" className="form-label">City</label>
@@ -76,12 +76,12 @@ const SingleTour = () => {
                             <input {...register("UserZip")} type="text" placeholder="Zip Code" className="form-control" id="inputZip" />
                         </div>
                         <div className="col-md-2">
-                            <label htmlFor="inputZip" className="form-label">Zip</label>
-                            <input {...register("rate")} value={tour.rate} type="text" placeholder="Rating" className="form-control" id="inputZip" />
+                            <label htmlFor="inputRate" className="form-label">Zip</label>
+                            <input {...register("rate")} value={tour.rate} type="text" placeholder="Rating" className="form-control" id="inputRate" />
                         </div>
                         <div className="col-md-2">
-                            <label htmlFor="inputZip" className="form-label">Zip</label>
-                            <input {...register("price")} value={tour.price} type="text" placeholder="Price" className="form-control" id="inputZip" />
+                            <label htmlFor="inputPrice" className="form-label">Zip</label>
+                            <input {...register("price")} value={tour.price} type="text" placeholder="Price" className="form-control" id="inputPrice" />
                         </div>
                         <div className="col-12">
                             <button type="submit" className="btn btn-primary">Complete Order</button>
