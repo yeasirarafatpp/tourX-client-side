@@ -10,18 +10,21 @@ const MyPlace = () => {
             .then(data => setOrders(data))
     }, []);
     const handleDelete = id => {
-        const url = `https://boiling-cove-04802.herokuapp.com/orders/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    alert('Successfully Deleted');
-                    const remain = orders.filter(order => order._id !== id);
-                    setOrders(remain);
-                }
+        window.confirm('Are You Sure?');
+        if (true) {
+            const url = `https://boiling-cove-04802.herokuapp.com/orders/${id}`;
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        alert('Successfully Deleted');
+                        const remain = orders.filter(order => order._id !== id);
+                        setOrders(remain);
+                    }
+                })
+        }
     }
     return (
         <div className="container py-5">
