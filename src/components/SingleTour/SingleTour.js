@@ -76,11 +76,11 @@ const SingleTour = () => {
                             <input {...register("UserZip")} type="text" placeholder="Zip Code" className="form-control" id="inputZip" />
                         </div>
                         <div className="col-md-2">
-                            <label htmlFor="inputRate" className="form-label">Zip</label>
+                            <label htmlFor="inputRate" className="form-label">Rate</label>
                             <input {...register("rate")} value={tour.rate} type="text" placeholder="Rating" className="form-control" id="inputRate" />
                         </div>
                         <div className="col-md-2">
-                            <label htmlFor="inputPrice" className="form-label">Zip</label>
+                            <label htmlFor="inputPrice" className="form-label">Price</label>
                             <input {...register("price")} value={tour.price} type="text" placeholder="Price" className="form-control" id="inputPrice" />
                         </div>
                         <div className="col-12">
