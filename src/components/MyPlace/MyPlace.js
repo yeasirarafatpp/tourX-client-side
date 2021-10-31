@@ -16,7 +16,11 @@ const MyPlace = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if (data.deletedCount) {
+                    alert('Successfully Deleted');
+                    const remain = orders.filter(order => order._id !== id);
+                    setOrders(remain);
+                }
             })
     }
     return (
