@@ -12,6 +12,7 @@ import SingleTour from './components/SingleTour/SingleTour';
 import AddDestination from './components/AddDestination/AddDestination';
 import MyPlace from './components/MyPlace/MyPlace';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AllBookins from './components/AllBookings/AllBookings';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route exact path="/myPlace">
               <MyPlace></MyPlace>
+            </Route>
+            <Route exact path="/allBooking">
+              <AllBookins></AllBookins>
             </Route>
             <Route exact path="/addDestination">
               <AddDestination></AddDestination>
