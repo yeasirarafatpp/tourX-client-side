@@ -1,18 +1,32 @@
-# Getting Started with Create React App
+# Welcome to TourX website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Visit Tour X webiste](https://tour-x.web.app).
 
-## Available Scripts
+## Our Feature
+* Showing all destination
+* No loading Website
+* Easy to route all page
+* Add own destination
+* Registration Method
 
-In the project directory, you can run:
+What Make User Excited
 
-### `npm start`
+### `Registration Method`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Every user can register by his/her email.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `Private Route`
+
+Every user have to a account for place an order.
+
+### `Custom Destination`
+
+Every user can add a destination.
+
+### `See All Bookings`
+
+Every user can see all destination.
+
 
 ### `npm test`
 
