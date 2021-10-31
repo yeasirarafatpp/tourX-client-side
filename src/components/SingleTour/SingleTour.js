@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const SingleTour = () => {
     const { user } = useAuth();
@@ -12,12 +13,22 @@ const SingleTour = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setTour(data))
-    }, []);
+    }, [tourId]);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
+        axios.post('https://boiling-cove-04802.herokuapp.com/order', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('Order Received.')
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
         reset();
     };
+
     return (
         <div className="container py-5">
             <div className="row">
@@ -38,19 +49,23 @@ const SingleTour = () => {
                     <h3>Please Submit form to place an order</h3>
 
 
-                    {/* Bootstrap form */}
+                    {/* Bootstrap react hook form */}
                     <form onSubmit={handleSubmit(onSubmit)} className="row g-3">
                         <div className="col-md-6">
                             <label htmlFor="inputEmail4" className="form-label">Email</label>
-                            <input {...register("RegEmail")} type="email" className="form-control" placeholder="Email" id="inputEmail4" />
+                            <input {...register("RegEmail")} type="email" value={user.email} className="form-control" placeholder="Email" id="inputEmail4" />
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputText" className="form-label">Name</label>
-                            <input {...register("FullName")} placeholder="Name" type="text" className="form-control" id="inputText" />
+                            <input {...register("FullName")} value={user.displayName} placeholder="Name" type="text" className="form-control" id="inputText" />
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAddress" className="form-label">Address</label>
                             <input {...register("UserAddress")} type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
+                        </div>
+                        <div className="col-12">
+                            <label htmlFor="inputAddress" className="form-label">Destination</label>
+                            <input {...register("destination")} type="text" className="form-control" id="inputAddress" value={tour.destination} placeholder="1234 Main St" />
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputCity" className="form-label">City</label>
@@ -59,6 +74,14 @@ const SingleTour = () => {
                         <div className="col-md-2">
                             <label htmlFor="inputZip" className="form-label">Zip</label>
                             <input {...register("UserZip")} type="text" placeholder="Zip Code" className="form-control" id="inputZip" />
+                        </div>
+                        <div className="col-md-2">
+                            <label htmlFor="inputZip" className="form-label">Zip</label>
+                            <input {...register("rate")} value={tour.rate} type="text" placeholder="Rating" className="form-control" id="inputZip" />
+                        </div>
+                        <div className="col-md-2">
+                            <label htmlFor="inputZip" className="form-label">Zip</label>
+                            <input {...register("price")} value={tour.price} type="text" placeholder="Price" className="form-control" id="inputZip" />
                         </div>
                         <div className="col-12">
                             <button type="submit" className="btn btn-primary">Complete Order</button>

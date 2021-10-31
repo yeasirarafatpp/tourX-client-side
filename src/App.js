@@ -11,12 +11,13 @@ import Footer from './components/Footer/Footer';
 import SingleTour from './components/SingleTour/SingleTour';
 import AddDestination from './components/AddDestination/AddDestination';
 import MyPlace from './components/MyPlace/MyPlace';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div>
-      <AuthProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <AuthProvider>
           <Header></Header>
           <Switch>
             <Route exact path="/">
@@ -34,9 +35,9 @@ function App() {
             <Route exact path="/addDestination">
               <AddDestination></AddDestination>
             </Route>
-            <Route exact path="/tour/:tourId">
+            <PrivateRoute exact path="/tour/:tourId">
               <SingleTour></SingleTour>
-            </Route>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login></Login>
             </Route>
@@ -48,8 +49,8 @@ function App() {
             </Route>
           </Switch>
           <Footer></Footer>
-        </BrowserRouter>
-      </AuthProvider>
+        </AuthProvider>
+      </BrowserRouter>
     </div>
   );
 }

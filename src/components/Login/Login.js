@@ -1,13 +1,22 @@
 import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import googleLogo from '../../images/gLogo.png';
 
 const Login = () => {
-    const { tours, signInUsingGoogle } = useAuth();
+    const history = useHistory();
+    const location = useLocation();
+    const { user, signInUsingGoogle } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { from } = location.state || { from: { pathname: '/' } }
+
+    useEffect(() => {
+        if (user && user.email) {
+            history.replace(from)
+        }
+    }, [user, from, history]);
 
     const auth = getAuth();
 

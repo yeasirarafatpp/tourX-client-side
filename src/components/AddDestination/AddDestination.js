@@ -8,7 +8,7 @@ const AddDestination = () => {
     const onSubmit = data => {
         console.log(data);
         setNewDestination(data);
-        axios.post('http://localhost:4000/tours', data)
+        axios.post('https://boiling-cove-04802.herokuapp.com/tours', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Your Destination Successfully Added.')
